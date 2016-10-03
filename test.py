@@ -1,7 +1,7 @@
 import time
 from tkinter import *
 
-from widget.get.getImformation import *
+from getImformation import *
 
 
 class interface(junbuk):
