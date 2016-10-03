@@ -190,19 +190,3 @@ class interface(junbuk):
 app=interface()
 app.draw_interface()
 app.t.mainloop()
-import sys
-from cx_Freeze import setup, Executable
-import os
-os.environ['TCL_LIBRARY']="C:\Program Files\Python3.5\tcl\tcl8.6"
-os.environ['TK_LIBRARY'] = "C:\Program Files\Python3.5\tcl\tk8.6"
-build_exe_options = {"includes":["sys","tkinter","urllib","urllib.request"],"include_files":app.player[:][3]}
-base = None
-if sys.platform == "win32":
-    base = "Win32GUI"
-
-setup(  name = "guifoo",
-        version = "0.1",
-        description = "gui",
-        options = {"build_exe":build_exe_options},
-        executables = [Executable("test.py",base=base,targetName="text.exe")]
-)
